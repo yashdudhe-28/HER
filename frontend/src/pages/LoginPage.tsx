@@ -52,7 +52,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ setUser }) => {
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-saffron-500 to-gold-500 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-gold to-gold-light rounded-full flex items-center justify-center mb-4 shadow-gold">
             <span className="text-white font-bold text-2xl">V</span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900">Welcome Back</h2>
@@ -113,7 +113,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ setUser }) => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-saffron-600 focus:ring-saffron-500 border-gray-300 rounded"
+                className="h-4 w-4 text-gold focus:ring-gold border-gold/30 rounded"
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
                 Remember me
@@ -121,7 +121,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ setUser }) => {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="text-saffron-600 hover:text-saffron-500">
+              <a href="#" className="text-gold hover:text-gold-light">
                 Forgot your password?
               </a>
             </div>

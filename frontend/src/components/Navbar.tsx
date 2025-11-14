@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
                 placeholder="Search for products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500"
+                className="w-full pl-10 pr-4 py-2 border border-gold/30 rounded-luxury focus:ring-2 focus:ring-gold focus:border-gold bg-cream text-royalBrown"
               />
               <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
             </form>
@@ -114,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
                 {/* Wishlist */}
                 <Link
                   to="/wishlist"
-                  className="p-2 text-gray-600 hover:text-saffron-600 transition-colors relative"
+                  className="p-2 text-chocolate hover:text-royalBrown transition-colors relative"
                 >
                   <Heart className="h-6 w-6" />
                 </Link>
@@ -122,11 +122,11 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
                 {/* Cart */}
                 <Link
                   to="/cart"
-                  className="p-2 text-gray-600 hover:text-saffron-600 transition-colors relative"
+                  className="p-2 text-chocolate hover:text-royalBrown transition-colors relative"
                 >
                   <ShoppingCart className="h-6 w-6" />
                   {totalItems > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-saffron-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 bg-gold text-royalBrown text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
                       {totalItems}
                     </span>
                   )}
@@ -181,7 +181,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-gray-600 hover:text-saffron-600 transition-colors"
+              className="lg:hidden p-2 text-chocolate hover:text-royalBrown transition-colors"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -199,7 +199,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
                   placeholder="Search for products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gold/30 rounded-luxury focus:ring-2 focus:ring-gold focus:border-gold bg-cream text-royalBrown"
                 />
                 <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
               </form>
@@ -212,8 +212,8 @@ const Navbar: React.FC<NavbarProps> = ({ user, setUser }) => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 text-gray-700 hover:text-saffron-600 hover:bg-saffron-50 rounded-lg transition-colors ${
-                    isActiveLink(link.path) ? 'text-saffron-600 bg-saffron-50' : ''
+                  className={`block px-4 py-2 text-chocolate hover:text-royalBrown hover:bg-sandBeige rounded-luxury transition-colors ${
+                    isActiveLink(link.path) ? 'text-royalBrown bg-sandBeige' : ''
                   }`}
                 >
                   {link.label}

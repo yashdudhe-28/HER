@@ -11,21 +11,21 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-deepBlue-800 to-deepBlue-900 text-white">
+    <footer className="bg-gradient-to-br from-royalBrown via-chocolate to-maroon text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-saffron-500 to-gold-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-gold to-gold-light rounded-luxury flex items-center justify-center shadow-gold">
                 <span className="text-white font-bold text-xl">V</span>
               </div>
               <div>
                 <h3 className="text-2xl font-bold">VastraVerse</h3>
-                <p className="text-sm text-blue-200">Your Fashion, Your Way</p>
+                <p className="text-sm text-cream/80">Your Fashion, Your Way</p>
               </div>
             </div>
-            <p className="text-blue-200 mb-6">
+            <p className="text-cream/80 mb-6">
               Explore the Universe of Indian Fashion with our curated collection of traditional and modern clothing.
             </p>
             <div className="flex space-x-4">

@@ -79,7 +79,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <div className="p-4">
         <div className="mb-2">
-          <span className="text-xs font-medium text-saffron-600 uppercase tracking-wide">
+          <span className="text-xs font-medium text-gold uppercase tracking-luxury">
             {product.category}
           </span>
         </div>
@@ -138,7 +138,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           
           <button
             onClick={handleAddToWishlist}
-            className="p-2 border border-gray-300 rounded-lg hover:border-saffron-500 hover:text-saffron-600 transition-colors"
+            className="p-2 border border-gold/30 rounded-luxury hover:border-gold hover:text-gold transition-colors"
           >
             <Heart className="h-4 w-4" />
           </button>
