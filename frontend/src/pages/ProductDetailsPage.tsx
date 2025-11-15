@@ -99,7 +99,12 @@ const ProductDetailsPage: React.FC = () => {
 
     try {
       for (let i = 0; i < quantity; i++) {
-        await addToCart(product.id);
+        await addToCart({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+        });
       }
       toast.success(`Added ${quantity} item(s) to cart!`);
     } catch (error) {

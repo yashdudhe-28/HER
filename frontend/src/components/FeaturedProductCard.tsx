@@ -21,7 +21,12 @@ const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ product }) =>
 
   const handleAddToCart = async () => {
     try {
-      await addToCart(product.id);
+      await addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+      });
       toast.success('Added to cart!');
     } catch (error) {
       console.error('Failed to add to cart:', error);

@@ -5,7 +5,6 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { products } from '../data/products';
 import toast from 'react-hot-toast';
 
 interface CartItem {
@@ -17,6 +16,13 @@ interface CartItem {
   image: string;
 }
 
+interface ProductDetails {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+}
+
 interface CartState {
   items: CartItem[];
   totalItems: number;
@@ -25,7 +31,7 @@ interface CartState {
   
   // Actions
   fetchCart: () => void;
-  addToCart: (productId: number, quantity?: number) => void;
+  addToCart: (productDetails: ProductDetails, quantity?: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   removeFromCart: (productId: number) => void;
   clearCart: () => void;
@@ -54,21 +60,15 @@ export const useCart = create<CartState>()(
         });
       },
 
-      addToCart: (productId: number, quantity = 1) => {
-        const product = products.find(p => p.id === productId);
-        if (!product) {
-          toast.error('Product not found');
-          return;
-        }
-
+      addToCart: (productDetails: ProductDetails, quantity = 1) => {
         const { items } = get();
-        const existingItem = items.find(item => item.productId === productId);
+        const existingItem = items.find(item => item.productId === productDetails.id);
 
         let newItems;
         if (existingItem) {
           // Update existing item
           newItems = items.map(item =>
-            item.productId === productId
+            item.productId === productDetails.id
               ? { ...item, quantity: item.quantity + quantity }
               : item
           );
@@ -76,11 +76,11 @@ export const useCart = create<CartState>()(
           // Add new item
           const newItem: CartItem = {
             id: Date.now(), // Simple ID generation
-            productId: product.id,
+            productId: productDetails.id,
             quantity,
-            price: product.price,
-            name: product.name,
-            image: product.image,
+            price: productDetails.price,
+            name: productDetails.name,
+            image: productDetails.image,
           };
           newItems = [...items, newItem];
         }
@@ -94,7 +94,7 @@ export const useCart = create<CartState>()(
           totalPrice 
         });
 
-        toast.success(`${product.name} added to cart!`);
+        toast.success(`${productDetails.name} added to cart!`);
       },
 
       updateQuantity: (productId: number, quantity: number) => {
